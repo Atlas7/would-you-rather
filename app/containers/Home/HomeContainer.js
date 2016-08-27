@@ -1,11 +1,10 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import { Home } from 'components'
 
 const HomeContainer = React.createClass({
-  propTypes: {
-  },
   render () {
     return (
-      <div>{'HOME CONTAINER'}</div>
+      <Home />
     )
   },
 })
