@@ -1,0 +1,17 @@
+{
+  // base presets
+  presets: [
+    "react",
+    "es2015",
+    "stage-0"
+  ],
+
+  // add extra presets depending on how we npm run it
+  env: {
+    start: {
+      presets: [
+        "react-hmre"
+      ]
+    }
+  }
+}
