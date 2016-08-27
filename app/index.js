@@ -1,13 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-
-function HelloWorld () {
-  return (
-    <div>HELLO WORLD</div>
-  )
-}
+import { HelloWorldContainer } from 'containers'
 
 ReactDOM.render(
-  <HelloWorld />,
+  <HelloWorldContainer />,
   document.getElementById('app')
 )
