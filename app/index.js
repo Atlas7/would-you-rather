@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { HelloWorldContainer } from 'containers'
+import routes from 'config/routes'
 
 ReactDOM.render(
-  <HelloWorldContainer />,
+  routes(),
   document.getElementById('app')
 )
