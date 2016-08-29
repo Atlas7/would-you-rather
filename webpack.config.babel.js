@@ -4,7 +4,9 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 const PATHS = {
   app: path.join(__dirname, 'app'),
-  build: path.join(__dirname, 'dist')
+  build: path.join(__dirname, 'dist'),
+  images: path.join(__dirname, 'app/images'),
+  node_modules: path.join(__dirname, 'node_modules'),
 }
 
 const LAUNCH_COMMAND = process.env.npm_lifecycle_event
@@ -44,13 +46,20 @@ const base = {
   // Webpack needs to know which transformations to make on your code.
   module: {
     loaders: [
-      {test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"},
-      {test: /\.css$/, loader: 'style!css?sourceMap&modules&localIdentName=[name]__[local]___[hash:base64:5]'},
-      {test: /\.(jpe?g|png|gif|svg)$/i,
-        loaders: [
-          'file?hash=sha512&digest=hex&name=[hash].[ext]',
-          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
-      ]}
+      {
+        test: /\.js$/,
+        exclude: PATHS.node_modules,
+        loader: "babel-loader"
+      },
+      {
+        test: /\.css$/,
+        loader: 'style!css?sourceMap&modules&localIdentName=[name]__[local]___[hash:base64:5]'
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        include: PATHS.images,
+        loader: 'file?name=[name]__[hash:base64:5].[ext]'
+      },
     ]
   },
 
@@ -62,7 +71,8 @@ const base = {
   //  import { HelloWorld } from 'components'
   resolve: {
     root: path.resolve('./app')
-  }
+  },
+
 }
 
 // Development specific Webpack config
