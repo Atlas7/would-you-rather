@@ -9,3 +9,12 @@
 .slogan {
   composes: subHeader from 'sharedStyles/styles.css';
 }
+
+.logoContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  margin: 20px auto;
+}
