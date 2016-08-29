@@ -17,6 +17,12 @@ git clone https://github.com/Atlas7/would-you-rather.git
 ```
 
 
+NPM install dependencies:
+
+```
+npm install
+```
+
 Start a webserver at localhost:8080 (that serves the bundled version `app/index.html` and `app/index.js` files to the web browser)
 
 ```
