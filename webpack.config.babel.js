@@ -4,7 +4,8 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 const PATHS = {
   app: path.join(__dirname, 'app'),
-  build: path.join(__dirname, 'dist')
+  build: path.join(__dirname, 'dist'),
+  images: path.join(__dirname, 'images'),
 }
 
 const LAUNCH_COMMAND = process.env.npm_lifecycle_event
@@ -44,13 +45,23 @@ const base = {
   // Webpack needs to know which transformations to make on your code.
   module: {
     loaders: [
-      {test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"},
-      {test: /\.css$/, loader: 'style!css?sourceMap&modules&localIdentName=[name]__[local]___[hash:base64:5]'},
-      {test: /\.(jpe?g|png|gif|svg)$/i,
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader"
+      },
+      {
+        test: /\.css$/,
+        loader: 'style!css?sourceMap&modules&localIdentName=[name]__[local]___[hash:base64:5]'
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        include: PATHS.images,
         loaders: [
           'file?hash=sha512&digest=hex&name=[hash].[ext]',
           'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
-      ]}
+        ]
+      }
     ]
   },
 
