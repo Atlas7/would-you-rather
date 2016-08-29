@@ -1,7 +1,7 @@
 import React, { PropTypes} from 'react'
-import allBlacks from 'images/allBlacks.gif'
+import allBlacksLogo from 'images/allBlacksLogo.gif'
 
-const defaultImage = allBlacks
+const defaultImage = allBlacksLogo
 const Logo = ({image=defaultImage, width=50, height=50, mode='fit'}) => {
   return (
     <img src={image} width={width} height={height} mode={mode}/>
