@@ -17,7 +17,7 @@ export default function Home () {
       </div>
       <div className={logoContainer}>
         <Logo image={nikeLogo} width={200} height={100} mode='fit'/>
-        <Logo image={englandRugbyLogo} width={200} height={250} mode='fit'/>
+        <Logo image={englandRugbyLogo} width={150} height={200} mode='fit'/>
       </div>
     </div>
   )
