@@ -1,5 +1,5 @@
 import React, { PropTypes} from 'react'
-import allBlacks from 'file!images/allBlacks.gif'
+import allBlacks from 'images/allBlacks.gif'
 
 Logo.propTypes = {
   width: PropTypes.number.isRequired,
