@@ -7,8 +7,7 @@ const MainContainer = React.createClass({
   render () {
     return (
       <div>
-        {'MAIN CONTAINER'}
-        <Navigation />
+        <Navigation isAuthed={false}/>
         <div>{this.props.children}</div>
       </div>
     )
