@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import { Main } from 'components'
+import { Navigation } from 'components'
 
 const MainContainer = React.createClass({
   propTypes: {
@@ -8,6 +8,7 @@ const MainContainer = React.createClass({
     return (
       <div>
         {'MAIN CONTAINER'}
+        <Navigation />
         <div>{this.props.children}</div>
       </div>
     )
