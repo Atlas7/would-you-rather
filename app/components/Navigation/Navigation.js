@@ -3,14 +3,14 @@ import { Link } from 'react-router'
 import { mainContainer, navContainer, link } from './styles.css'
 
 function NavLinks ({isAuthed}) {
-  return isAuthed === true?
+  return isAuthed === true ?
     <ul>
       <li><Link className={link} to='/'>{'Home'}</Link></li>
+      <li><Link className={link} to='/'>{'Profile'}</Link></li>
     </ul>
     :
     <ul>
       <li><Link className={link} to='/'>{'Home'}</Link></li>
-      <li><Link className={link} to='/'>{'Profile'}</Link></li>
     </ul>
 }
 
@@ -30,7 +30,7 @@ export default function Navigation ({isAuthed}) {
   return (
     <div className={mainContainer}>
       <nav className={navContainer}>
-        <NavLinks />
+        <NavLinks isAuthed={isAuthed} />
         <ActionLinks isAuthed={isAuthed} />
       </nav>
     </div>
