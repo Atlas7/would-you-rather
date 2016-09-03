@@ -66,7 +66,7 @@ let reduxSchema = {
     }
   },
 
-  //usersDucks
+  //usersDecision
   usersDecisions: {
     isFetching,
     error,
