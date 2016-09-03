@@ -6,6 +6,7 @@ const FETCHING_USER_FAILURE = 'FETCHING_USER_FAILURE'
 const FETCHING_USER_SUCCESS = 'FETCHING_USER_SUCCESS'
 const REMOVE_FETCHING_USER = 'REMOVE_FETCHING_USER'
 const AUTH_USER = 'AUTH_USER'
+const UNAUTH_USER = 'UNAUTH_USER'
 
 function fetchingUser () {
   return {
@@ -38,6 +39,11 @@ function authUser () {
   }
 }
 
+function unAuthUser () {
+  return {
+    type: UNAUTH_USER
+  }
+}
 //*** Initial State
 
 const initialState = Map({
@@ -71,6 +77,11 @@ export default function users (state = initialState, action) {
     case AUTH_USER:
       return state.merge({
         isAuthed: true,
+      })
+    case UNAUTH_USER:
+      return state.merge({
+        isAuthed: false,
+        authedId: ''
       })
   }
   return state
