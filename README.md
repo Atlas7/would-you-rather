@@ -4,9 +4,11 @@
 
 This is a personal project - to build a ReactJS Single Page Web Application, using the [ReactJS Program Redux-Immutable Curriculum](https://github.com/ReactjsProgram/Redux-Immutable-Curriculum) as a baseline starting point.
 
-Aim: master web app development skill, be creative, and apply newly found tricks from the internet as the project goes.
+- **Aim**: master web app development skill, be creative, and apply newly found tricks from the internet as the project goes.
 
-Development Tools: ReactJS, WebPack, ES6+, Immutable, Babel, File loaders (e.g. CSS and Images), Redux, etc.
+- **Development Tools**: ReactJS, WebPack, ES6+, Immutable, Babel, File loaders (e.g. CSS and Images), Redux, etc.
+
+- **Test Tools**: Mocha, Chai, and "chai-immutable" - for Test Driven Development (TDD) - particular handy for writing Redux reducers and complex logic.
 
 # Development Instruction
 
