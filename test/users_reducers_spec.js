@@ -84,14 +84,17 @@ describe('users reducer', () => {
   it('handle AUTH_USER', () => {
     const initialState = MOCKSTATE.merge({
       isAuthed: false,
+      authedId: '',
     })
     const action = {
-      type: AUTH_USER
+      type: AUTH_USER,
+      uid: 'johnny5',
     }
     const nextState = users(initialState, action)
     expect(nextState).to.equal(
       MOCKSTATE.merge({
         isAuthed: true,
+        authedId: 'johnny5',
       })
     )
   })
@@ -99,7 +102,7 @@ describe('users reducer', () => {
   it('handle UNAUTH_USER', () => {
     const initialState = MOCKSTATE.merge({
       isAuthed: true,
-      authedId: 'xxxxxxxxxxx'
+      authedId: 'johnny5'
     })
     const action = {
       type: UNAUTH_USER

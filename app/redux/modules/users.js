@@ -33,9 +33,10 @@ function removeFetchingUser () {
   }
 }
 
-function authUser () {
+function authUser (uid) {
   return {
-    type: AUTH_USER
+    type: AUTH_USER,
+    uid,
   }
 }
 
@@ -77,6 +78,7 @@ export default function users (state = initialState, action) {
     case AUTH_USER:
       return state.merge({
         isAuthed: true,
+        authedId: action.uid,
       })
     case UNAUTH_USER:
       return state.merge({
