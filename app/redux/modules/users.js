@@ -4,6 +4,7 @@ import { Map } from 'immutable'
 const FETCHING_USER = 'FETCHING_USER'
 const FETCHING_USER_FAILURE = 'FETCHING_USER_FAILURE'
 const FETCHING_USER_SUCCESS = 'FETCHING_USER_SUCCESS'
+const REMOVE_FETCHING_USER = 'REMOVE_FETCHING_USER'
 
 function fetchingUser () {
   return {
@@ -18,10 +19,15 @@ function fetchingUserFailure () {
   }
 }
 
-
 function fetchingUserSuccess () {
   return {
     type: FETCHING_USER_SUCCESS,
+  }
+}
+
+function removeFetchingUser () {
+  return {
+    type: REMOVE_FETCHING_USER,
   }
 }
 
@@ -48,6 +54,10 @@ export default function users (state = initialState, action) {
         error: action.error,
       })
     case FETCHING_USER_SUCCESS:
+      return state.merge({
+        isFetching: false,
+      })
+    case REMOVE_FETCHING_USER:
       return state.merge({
         isFetching: false,
       })
