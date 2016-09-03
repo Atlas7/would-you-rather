@@ -3,6 +3,7 @@ import { Map } from 'immutable'
 //*** Action Creators
 const FETCHING_USER = 'FETCHING_USER'
 const FETCHING_USER_FAILURE = 'FETCHING_USER_FAILURE'
+const FETCHING_USER_SUCCESS = 'FETCHING_USER_SUCCESS'
 
 function fetchingUser () {
   return {
@@ -14,6 +15,13 @@ function fetchingUserFailure () {
   return {
     type: FETCHING_USER_FAILURE,
     error: 'Error fetching user.',
+  }
+}
+
+
+function fetchingUserSuccess () {
+  return {
+    type: FETCHING_USER_SUCCESS,
   }
 }
 
@@ -38,6 +46,10 @@ export default function users (state = initialState, action) {
       return state.merge({
         isFetching: false,
         error: action.error,
+      })
+    case FETCHING_USER_SUCCESS:
+      return state.merge({
+        isFetching: false,
       })
   }
   return state
