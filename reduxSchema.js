@@ -27,19 +27,31 @@ let reduxSchema = {
 
   //modal
   modal: {
-    ducks,
+    decision: {
+      title,
+      firstOption: {
+        text
+      },
+      secondOption: {
+        text
+      }
+    },
     isOpen,
   },
 
-  //ducks
-  ducks: {
-    [duckId]: {
+  //decisions
+  decisions: {
+    [decisionId]: {
       lastUpdated,
       info: {
-        avatar,
-        duckId,
-        name,
-        text,
+        decisionId,
+        title,
+        firstOption: {
+          text
+        },
+        secondOption: {
+          text
+        },
         timestamp,
         uid,
       }
@@ -48,49 +60,37 @@ let reduxSchema = {
 
   //likeCount
   likeCount: {
-    [duckId]: 0
+    [decisionId]: {
+      firstOption: 0,
+      secondOption: 0
+    }
   },
 
-  //usersDucks
-  usersDucks: {
+  //usersDecision
+  usersDecisions: {
     isFetching,
     error,
     [uid]: {
       lastUpdated,
-      duckIds: [duckId, duckId, duckId]
+      decisionIds: [decisionId, decisionId, decisionId]
     }
   },
 
   //usersLikes
   usersLikes: {
-    duckid: true,
+    decisionId: {
+      firstOption: false,
+      secondOption: true,
+    },
   },
 
   //feed
   feed: {
     isFetching,
     error,
-    newDucksAvailable,
-    duckIdsToAdd: [duckId, duckId],
-    duckIds: [duckid, duckId, duckId]
-  },
-
-  //replies
-  replies: {
-    isFetching,
-    error,
-    [duckId]: {
-      lastUpdated,
-      replies: {
-        [replyId]: {
-          name,
-          reply,
-          uid,
-          timestamp,
-          avatar
-        }
-      }
-    }
+    newDecisionsAvailable,
+    decisionIdsToAdd: [decisionId, decisionId],
+    decisionIds: [decisionId, decisionId, decisionId]
   },
 
   //listeners
