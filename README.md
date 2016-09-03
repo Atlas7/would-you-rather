@@ -53,6 +53,25 @@ Create the `dist` folder, and spit out the **minified** files there - this may b
 npm run production
 ```
 
+# Test Instructions
+
+Mocha and Chai are used in the TDD (Test Driven Development) proccess - inspired by the awesome [Full-stack Redux Tutorial](http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html) by [@Teropa](https://github.com/teropa).
+
+All tests are stored under the `/test` directory.
+
+To run the entire test suite:
+
+```
+npm run test
+```
+
+To run an individual test script (example):
+
+```
+npm run test ./test/users_reducers_spec.js
+```
+
+
 # Get In Touch
 
 I like learning and experimenting with new tools. If this repository has helped you & you'd like to share tips & tricks etc, my twitter is [@jAtlas7](https://twitter.com/jAtlas7).
