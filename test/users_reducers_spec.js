@@ -6,6 +6,7 @@ const FETCHING_USER = 'FETCHING_USER'
 const FETCHING_USER_FAILURE = 'FETCHING_USER_FAILURE'
 const FETCHING_USER_SUCCESS = 'FETCHING_USER_SUCCESS'
 const REMOVE_FETCHING_USER = 'REMOVE_FETCHING_USER'
+const AUTH_USER = 'AUTH_USER'
 
 const MOCKSTATE = Map({
   isFetching: false,
@@ -75,6 +76,21 @@ describe('users reducer', () => {
     expect(nextState).to.equal(
       MOCKSTATE.merge({
         isFetching: false,
+      })
+    )
+  })
+
+  it('handle AUTH_USER', () => {
+    const initialState = MOCKSTATE.merge({
+      isFetching: false,
+    })
+    const action = {
+      type: AUTH_USER
+    }
+    const nextState = users(initialState, action)
+    expect(nextState).to.equal(
+      MOCKSTATE.merge({
+        isAuthed: true,
       })
     )
   })
