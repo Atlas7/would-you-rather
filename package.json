@@ -7,7 +7,7 @@
     "start": "webpack-dev-server",
     "stage": "webpack",
     "production": "webpack -p",
-    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js  --recursive; exit 0"
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js  --recursive"
   },
   "keywords": [
     "react"
