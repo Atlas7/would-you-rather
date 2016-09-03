@@ -33,7 +33,7 @@ function removeFetchingUser () {
   }
 }
 
-function authUser (uid) {
+export function authUser (uid) {
   return {
     type: AUTH_USER,
     uid,
