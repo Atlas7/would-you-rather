@@ -1,5 +1,15 @@
 import { Map } from 'immutable'
 
+//*** Action Creators
+const FETCHING_USER = 'FETCHING_USER'
+
+function fetchingUser () {
+  return {
+    type: FETCHING_USER
+  }
+}
+
+
 //*** Initial State
 
 const initialState = Map({
@@ -13,7 +23,10 @@ const initialState = Map({
 
 export default function users (state = initialState, action) {
   switch (action.type) {
-    // case...
+    case FETCHING_USER:
+      return state.merge({
+        isFetching: true,
+      })
   }
   return state
 }
