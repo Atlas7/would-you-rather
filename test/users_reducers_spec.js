@@ -17,7 +17,9 @@ const MOCKSTATE = Map({
 describe('users reducer', () => {
 
   it('handle FETCHING_USER', () => {
-    const initialState = MOCKSTATE
+    const initialState = MOCKSTATE.merge({
+      isFetching: false,
+    })
     const action = {
       type: FETCHING_USER
     }
@@ -30,7 +32,10 @@ describe('users reducer', () => {
   })
 
   it('handle FETCHING_USER_FAILURE', () => {
-    const initialState = MOCKSTATE
+    const initialState = MOCKSTATE.merge({
+      isFetching: true,
+      error: '',
+    })
     const action = {
       type: FETCHING_USER_FAILURE,
       error: 'Error fetching user.',
