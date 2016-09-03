@@ -5,9 +5,9 @@ import {
   HomeContainer
 } from 'containers'
 
-export default function routes () {
+export default function routes (history=hashHistory) {
   return (
-    <Router history={hashHistory}>
+    <Router history={history}>
       <Router path='/' component={MainContainer}>
         <IndexRoute component={HomeContainer} />
       </Router>
