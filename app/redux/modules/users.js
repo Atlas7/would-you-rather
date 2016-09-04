@@ -93,3 +93,6 @@ export function unAuthUser () {
 }
 
 // Thunks
+export function fetchAndHandleAuthedUser () {
+  return 0
+}
