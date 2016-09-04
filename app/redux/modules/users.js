@@ -1,6 +1,7 @@
 import { Map } from 'immutable'
+import { fetchUser } from 'helpers/api'
 
-//*** Action Types
+// Action Types
 const FETCHING_USER = 'FETCHING_USER'
 const FETCHING_USER_FAILURE = 'FETCHING_USER_FAILURE'
 const FETCHING_USER_SUCCESS = 'FETCHING_USER_SUCCESS'
@@ -53,26 +54,26 @@ export default function users (state = initialState, action) {
 
 // Action Creators
 
-function fetchingUser () {
+export function fetchingUser () {
   return {
     type: FETCHING_USER
   }
 }
 
-function fetchingUserFailure () {
+export function fetchingUserFailure (error) {
   return {
     type: FETCHING_USER_FAILURE,
-    error: 'Error fetching user.',
+    error,
   }
 }
 
-function fetchingUserSuccess () {
+export function fetchingUserSuccess () {
   return {
     type: FETCHING_USER_SUCCESS,
   }
 }
 
-function removeFetchingUser () {
+export function removeFetchingUser () {
   return {
     type: REMOVE_FETCHING_USER,
   }
@@ -85,8 +86,13 @@ export function authUser (uid) {
   }
 }
 
-function unAuthUser () {
+export function unAuthUser () {
   return {
     type: UNAUTH_USER
   }
+}
+
+// Thunks
+export function fetchAndHandleAuthedUser () {
+  return 0
 }

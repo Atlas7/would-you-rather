@@ -7,7 +7,9 @@
     "start": "webpack-dev-server",
     "stage": "webpack",
     "production": "webpack -p",
-    "test": "mocha --compilers js:babel-core/register --require ./test/testHelper.js  --recursive"
+    "testold": "mocha --compilers js:babel-register --require ./test/testHelper.js  --recursive",
+    "test": "webpack-dev-server 'mocha!./tests/index.js'  --require ./test/testHelper.js  --output-filename test.js --port 8081",
+    "test:watch": "npm test -- --watch"
   },
   "keywords": [
     "react"
@@ -31,12 +33,14 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.14.0",
     "chai": "^3.5.0",
     "chai-immutable": "^1.6.0",
     "css-loader": "^0.24.0",
     "html-webpack-plugin": "^2.22.0",
     "image-webpack-loader": "^2.0.0",
     "mocha": "^3.0.2",
+    "mocha-loader": "^0.7.1",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.0"
