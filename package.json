@@ -8,7 +8,7 @@
     "stage": "webpack",
     "production": "webpack -p",
     "testold": "mocha --compilers js:babel-register --require ./test/testHelper.js  --recursive",
-    "test": "webpack-dev-server 'mocha!./tests/index.js'  --require ./test/testHelper.js  --output-filename test.js --port 8081",
+    "test": "webpack-dev-server 'mocha!./test/index.js'  --require ./test/testHelper.js  --output-filename test.js --port 8081",
     "test:watch": "npm test -- --watch"
   },
   "keywords": [
