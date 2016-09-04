@@ -1,4 +1,5 @@
 import { Map } from 'immutable'
+// import { fetchUser } from 'helpers/api'
 
 // Action Types
 const FETCHING_USER = 'FETCHING_USER'

@@ -36,7 +36,7 @@ describe('users reducer', () => {
       type: FETCHING_USER
     }
     const nextState = users(initialState, action)
-    expect(nextState).to.equal(
+    expect(nextState).to.deep.equal(
       MOCKSTATE.merge({
         isFetching: true,
       })
@@ -53,7 +53,7 @@ describe('users reducer', () => {
       error: 'Error fetching user.',
     }
     const nextState = users(initialState, action)
-    expect(nextState).to.equal(
+    expect(nextState).to.deep.equal(
       MOCKSTATE.merge({
         isFetching: false,
         error: 'Error fetching user.',
@@ -69,7 +69,7 @@ describe('users reducer', () => {
       type: FETCHING_USER_SUCCESS,
     }
     const nextState = users(initialState, action)
-    expect(nextState).to.equal(
+    expect(nextState).to.deep.equal(
       MOCKSTATE.merge({
         isFetching: false,
       })
@@ -84,7 +84,7 @@ describe('users reducer', () => {
       type: REMOVE_FETCHING_USER,
     }
     const nextState = users(initialState, action)
-    expect(nextState).to.equal(
+    expect(nextState).to.deep.equal(
       MOCKSTATE.merge({
         isFetching: false,
       })
@@ -101,7 +101,7 @@ describe('users reducer', () => {
       uid: 'johnny5',
     }
     const nextState = users(initialState, action)
-    expect(nextState).to.equal(
+    expect(nextState).to.deep.equal(
       MOCKSTATE.merge({
         isAuthed: true,
         authedId: 'johnny5',
@@ -118,7 +118,7 @@ describe('users reducer', () => {
       type: UNAUTH_USER
     }
     const nextState = users(initialState, action)
-    expect(nextState).to.equal(
+    expect(nextState).to.deep.equal(
       MOCKSTATE.merge({
         isAuthed: false,
         authedId: ''
