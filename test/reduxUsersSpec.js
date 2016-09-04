@@ -1,6 +1,16 @@
 import { Map, fromJS } from 'immutable';
 import { expect } from 'chai';
+
+// reducer
 import { users } from '../app/redux/modules';
+
+// actionCreators and thunks
+import {
+  // actionCreators
+  fetchingUser, fetchingUserFailure, fetchingUserSuccess,
+  removeFetchingUser, authUser, unAuthUser,
+
+} from '../app/redux/modules/users';
 
 const FETCHING_USER = 'FETCHING_USER'
 const FETCHING_USER_FAILURE = 'FETCHING_USER_FAILURE'
@@ -117,3 +127,108 @@ describe('users reducer', () => {
   })
 
 })
+
+describe('users actionCreators', () => {
+
+  describe('fetchingUser', () => {
+
+    it('is a function', () => {
+      expect(fetchingUser).to.be.a('function')
+    })
+
+    it('should create action FETCHING_USER', () => {
+      const expectedAction = {
+        type: FETCHING_USER
+      }
+      const actualAction = fetchingUser()
+      expect(actualAction).to.deep.equal(expectedAction)
+    })
+
+  })
+
+  describe('fetchingUserFailure', () => {
+
+    it('is a function', () => {
+      expect(fetchingUserFailure).to.be.a('function')
+    })
+
+    it('should create action FETCHING_USER_FAILURE', () => {
+      const error = 'Error fetching user.n'
+      const expectedAction = {
+        type: FETCHING_USER_FAILURE,
+        error,
+      }
+      const actualAction = fetchingUserFailure(error)
+      expect(actualAction).to.deep.equal(expectedAction)
+    })
+
+  })
+
+  describe('fetchingUserSuccess', () => {
+
+    it('is a function', () => {
+      expect(fetchingUserSuccess).to.be.a('function')
+    })
+
+    it('should create action FETCHING_USER_SUCCESS', () => {
+      const expectedAction = {
+        type: FETCHING_USER_SUCCESS
+      }
+      const actualAction = fetchingUserSuccess()
+      expect(actualAction).to.deep.equal(expectedAction)
+    })
+
+  })
+
+  describe('removeFetchingUser', () => {
+
+    it('is a function', () => {
+      expect(removeFetchingUser).to.be.a('function')
+    })
+
+    it('should create action REMOVE_FETCHING_USER', () => {
+      const expectedAction = {
+        type: REMOVE_FETCHING_USER
+      }
+      const actualAction = removeFetchingUser()
+      expect(actualAction).to.deep.equal(expectedAction)
+    })
+
+  })
+
+  describe('authUser', () => {
+
+    it('is a function', () => {
+      expect(authUser).to.be.a('function')
+    })
+
+    it('should create action AUTH_USER', () => {
+      const uid = 'johnny5'
+      const expectedAction = {
+        type: AUTH_USER,
+        uid,
+      }
+      const actualAction = authUser(uid)
+      expect(actualAction).to.deep.equal(expectedAction)
+    })
+
+  })
+
+  describe('unAuthUser', () => {
+
+    it('is a function', () => {
+      expect(unAuthUser).to.be.a('function')
+    })
+
+    it('should create action UNAUTH_USER', () => {
+      const expectedAction = {
+        type: UNAUTH_USER,
+      }
+      const actualAction = unAuthUser()
+      expect(actualAction).to.deep.equal(expectedAction)
+    })
+
+  })
+
+})
+
