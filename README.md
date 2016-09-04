@@ -59,7 +59,9 @@ npm run production
 
 Mocha and Chai are used in the TDD (Test Driven Development) proccess - inspired by the awesome [Full-stack Redux Tutorial](http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html) by [@Teropa](https://github.com/teropa).
 
-All tests are stored under the `/test` directory.
+Also managed to get `mocha-loader` to work nicely with Webpack (so the test is run against the a Webpack bundle, with test results displayed on browser) - inspired by [this AWESOME Stackoverflow forum](http://stackoverflow.com/questions/32385219/mocha-tests-dont-run-with-webpack-and-mocha-loader).
+
+All tests are stored under the `/test` directory. (naming rule: `xxxx.test.js` - see `tests/index.js` for info).
 
 To run the entire test suite:
 
@@ -67,11 +69,8 @@ To run the entire test suite:
 npm run test
 ```
 
-To run an individual test script (example):
 
-```
-npm run test ./test/usersReducersSpec.js
-```
+Navigate to [http://localhost:8081/](http://localhost:8081/) - you should see test result displayed along side the actual output.
 
 
 # Get In Touch
