@@ -18,9 +18,11 @@ let firebaseSchema = {
   //users
   users: {
     [uid]: {
-      name,
-      uid,
-      avatar,
+      info: {
+        name,
+        uid,
+        avatar,
+      }
     }
   },
 
