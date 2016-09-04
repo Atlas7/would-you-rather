@@ -70,7 +70,7 @@ npm run test
 To run an individual test script (example):
 
 ```
-npm run test ./test/users_reducers_spec.js
+npm run test ./test/usersReducersSpec.js
 ```
 
 
