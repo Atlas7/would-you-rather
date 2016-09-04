@@ -16,6 +16,7 @@ const MainContainer = React.createClass({
     authedId: PropTypes.string.isRequired,
   },
   render () {
+    //console.log('usersActionCreators', usersActionCreators)
     return (
       <div>
         <Navigation isAuthed={this.props.isAuthed}/>
